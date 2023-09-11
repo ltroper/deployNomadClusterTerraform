@@ -21,25 +21,6 @@ locals {
 
 
 
-# resource "linode_stackscript" "server" {
-#   label       = "My Server StackScript"
-#   description = "installs Nomad"
-#   is_public   = true
-#   images      = ["linode/ubuntu20.04", "linode/ubuntu16.04lts"]
-#   script      = file("../shared/data-scripts/user-data-server.sh") # Path to your stackscript file
-
-# }
-
-# resource "linode_stackscript" "client" {
-#   label       = "My Server StackScript"
-#   description = "installs Nomad"
-#   is_public   = true
-#   images      = ["linode/ubuntu20.04", "linode/ubuntu16.04lts"]
-#   script      = file("../shared/data-scripts/user-data-server.sh") # Path to your stackscript file
-
-# }
-
-
 
 
 resource "linode_instance" "server" {
@@ -103,12 +84,6 @@ resource "linode_instance" "client" {
     source      = "../shared"
     destination = "/ops"
   }
-
-  # stackscript_id = linode_stackscript.client.id
-  # stackscript_data = {
-  #   retry_join = local.retry_join
-  #   region     = var.region
-  # }
 
   provisioner "remote-exec" {
     inline = ["sudo chmod 777 -R /ops",
