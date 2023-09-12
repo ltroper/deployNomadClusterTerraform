@@ -1,6 +1,6 @@
 data_dir  = "/opt/nomad/data"
 bind_addr = "0.0.0.0"
-datacenter = "dc1"
+
 
 advertise {
   http = "IP_ADDRESS"
@@ -9,7 +9,7 @@ advertise {
 }
 
 acl {
-  enabled = true
+  enabled = false
 }
 
 server {

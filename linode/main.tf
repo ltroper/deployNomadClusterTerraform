@@ -15,7 +15,7 @@ provider "linode" {
 
 
 locals {
-  retry_join = "provider=linode api_token=${var.token} region=${var.region} tag_name=auto-join address_type=public_v4"
+  retry_join = "provider=linode tag_name=auto-join region=${var.region} address_type=public_v4 api_token=${var.token}"
 }
 
 
@@ -53,7 +53,7 @@ resource "linode_instance" "server" {
   provisioner "remote-exec" {
     inline = ["sudo chmod 777 -R /ops", 
     "export server_count=${var.server_count}",
-    "export retry_join=${local.retry_join}", 
+    "export retry_join='${local.retry_join}'", 
     "/ops/shared/data-scripts/user-data-server.sh"]
   }
 }

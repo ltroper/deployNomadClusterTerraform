@@ -8,7 +8,7 @@ ACL_DIRECTORY="/ops/shared/config"
 NOMAD_BOOTSTRAP_TOKEN="/tmp/nomad_bootstrap"
 NOMAD_USER_TOKEN="/tmp/nomad_user_token"
 CONFIGDIR="/ops/shared/config"
-NOMADVERSION="1.5.0"
+NOMADVERSION="1.6.1"
 NOMADDOWNLOAD=https://releases.hashicorp.com/nomad/${NOMADVERSION}/nomad_${NOMADVERSION}_linux_amd64.zip
 NOMADCONFIGDIR="/etc/nomad.d"
 NOMADDIR="/opt/nomad"
@@ -65,7 +65,8 @@ echo "Install complete"
 
 # Server setup phase begin -----------------------------------
 SERVER_COUNT=${server_count}
-RETRY_JOIN="${retry_join}"
+RETRY_JOIN=${retry_join}
+
 
 sed -i "s/SERVER_COUNT/$SERVER_COUNT/g" $CONFIGDIR/nomad.hcl
 sed -i "s/RETRY_JOIN/$RETRY_JOIN/g" $CONFIGDIR/nomad.hcl

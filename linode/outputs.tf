@@ -21,3 +21,4 @@ Copy the token value and use it to log in to the UI:
 cat nomad-management.token
 CONFIGURATION
 }
+
