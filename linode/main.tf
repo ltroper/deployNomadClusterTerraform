@@ -87,8 +87,8 @@ resource "linode_instance" "client" {
 
   provisioner "remote-exec" {
     inline = ["sudo chmod 777 -R /ops",
-    "export retry_join=${local.retry_join}", 
-    "/ops/shared/data-scripts/user-data-server.sh"]
+    "export retry_join='${local.retry_join}'", 
+    "/ops/shared/data-scripts/user-data-client.sh"]
   }
   // Add any additional configuration here
 }
