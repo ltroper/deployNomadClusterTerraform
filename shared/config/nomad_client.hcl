@@ -8,10 +8,7 @@ advertise {
   serf = "IP_ADDRESS"
 }
 
-node {
-  id = "IP_ADDRESS"
-}
-
+name = "IP_ADDRESS"
 
 client {
   enabled = true

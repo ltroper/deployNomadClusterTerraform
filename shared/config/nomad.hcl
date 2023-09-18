@@ -12,6 +12,8 @@ acl {
   enabled = false
 }
 
+name = "IP_ADDRESS"
+
 server {
   enabled          = true
   bootstrap_expect = SERVER_COUNT
