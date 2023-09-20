@@ -9,7 +9,7 @@ advertise {
 }
 
 acl {
-  enabled = false
+  enabled = true
 }
 
 name = "IP_ADDRESS"

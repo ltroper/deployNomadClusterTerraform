@@ -1,2 +1,3 @@
 linode/terraform.tfvars
 .terraform
+linode/nomad-management.token
